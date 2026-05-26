@@ -4,21 +4,37 @@ pipeline {
             label 'AGENT-1'
         }
     }
+    environemnt {
+        course = "jenkins"
+    }
     
     stages {
         stage('Build') {
             steps {
-                echo 'Building...' // Simple shell command or step
+                script {
+                    sh """
+                        echo 'Building...'
+                        echo $course 
+                    """    
+                }    
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
+                 script {
+                    sh """
+                        echo 'testing...' 
+                    """    
+                }  
             }
         }
          stage('deploy') {
             steps {
-                echo 'deploying...'
+                 script {
+                    sh """
+                        echo 'deplying...' 
+                    """    
+                }  
             }
         }
     }
