@@ -65,7 +65,7 @@ pipeline {
     }
     post {
         always {
-            echo 'i will always say hello'
+            echo 'i will always say hello/....'
             cleanWs()
         }
         success {
