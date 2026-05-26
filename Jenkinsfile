@@ -4,7 +4,7 @@ pipeline {
             label 'AGENT-1'
         }
     }
-    environemnt {
+    environment {
         course = "jenkins"
     }
     
@@ -32,7 +32,7 @@ pipeline {
             steps {
                  script {
                     sh """
-                        echo 'deplying...' 
+                        echo 'deploying...' 
                     """    
                 }  
             }
