@@ -1,5 +1,9 @@
 pipeline {
-    agent any // Where to run (any available node)
+    agent {
+        node {
+            label 'AGENT-1'
+        }
+    }
     
     stages {
         stage('Build') {
