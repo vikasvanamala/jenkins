@@ -8,7 +8,7 @@ pipeline {
         course = "jenkins"
     }
     options {
-        timeout(time: 1, unit: 'MINUTES') 
+        timeout(time: 10, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
     // parameters {
@@ -65,6 +65,15 @@ pipeline {
         always {
             echo 'i will always say hello'
             cleanWs()
+        }
+        success {
+            echo 'I will run if success'
+        }
+        failure {
+            echo 'I will run if failure'
+        }
+        aborted {
+            echo 'pipeline is aborted'
         }
     }
 }
