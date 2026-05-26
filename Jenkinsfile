@@ -22,7 +22,7 @@ pipeline {
                     sh """
                         echo 'Building...'
                         echo $course 
-                        #env
+                        
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
                         echo "Toggle: ${params.DEPLOY}"
@@ -42,6 +42,17 @@ pipeline {
             }
         }
          stage('deploy') {
+            input {
+                 message "Should we continue?"
+                 ok "Yes, we should."
+                 submitter "alice,bob"
+                 parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            when { 
+                expression { "$params.DEPLOY" == "true" }
+            }
             steps {
                  script {
                     sh """
