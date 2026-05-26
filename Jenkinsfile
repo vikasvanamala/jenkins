@@ -27,6 +27,7 @@ pipeline {
                         echo 'Building...'
                         echo $course 
                         env
+                        echo "hello"
                         
                     """    
                 }    
