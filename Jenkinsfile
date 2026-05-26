@@ -57,7 +57,7 @@ pipeline {
             steps {
                  script {
                     sh """
-                        echo 'deploying...' 
+                        echo 'deploying......' 
                     """    
                 }  
             }
