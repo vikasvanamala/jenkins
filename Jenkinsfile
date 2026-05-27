@@ -26,7 +26,7 @@ pipeline {
                     sh """
                         echo 'Building...'
                         echo $course 
-                        echo "hello"
+                        echo "hello hi"
                         
                     """    
                 }    
