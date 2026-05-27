@@ -26,7 +26,7 @@ pipeline {
                     sh """
                         echo 'Building...'
                         echo $course 
-                        env
+                        sleep 10
                         echo "hello"
                         
                     """    
