@@ -27,6 +27,7 @@ pipeline {
                         echo 'Building...'
                         echo $course 
                         echo "hello hi"
+                        echo "poll scm"
                         
                     """    
                 }    
